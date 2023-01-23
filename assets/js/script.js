@@ -58,7 +58,7 @@ async function getForecast(cityName) {
 
 // api call to fetch the coordinates for each city from the URL
 async function getCoordinates(cityName){
-    let url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${API_KEY}`
+    let url = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${API_KEY}`
     let response = await fetch(url);
     let data = await response.json()
     let lat = data[0].lat // The best match is at index 0
@@ -76,7 +76,7 @@ async function getCurrentForecast(lat, lon){
 
 // api call to return the five day forecast data from the URL
 async function getFiveDayForecast(lat, lon){
-    let url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${API_KEY}`
+    let url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${API_KEY}`
     let response = await fetch(url);
     let data = await response.json()
     return data
@@ -108,7 +108,7 @@ function updatePage(cityName, forecast){
         `<div class="card text-white bg-primary mb-3 mx-1" style="width: 80%;">
             <div class="card-header">${dayjs().format("dddd")}</div>
             <div class="card-body">
-            <img src="http://openweathermap.org/img/wn/${current_weather}@2x.png" class="card-img-top" alt="...">
+            <img src="https://openweathermap.org/img/wn/${current_weather}@2x.png" class="card-img-top" alt="...">
                 <h5 class="card-title">${Math.round(forecast.current.main.temp)}°F</h5>
                 <p>Wind Speed ${Math.round(forecast.current.wind.speed)} MPH</p>
                 <p>Humidity ${Math.round(forecast.current.main.humidity)}%</p>
@@ -155,7 +155,7 @@ function updatePage(cityName, forecast){
                 `<div class="card text-white bg-secondary mb-3 mx-1" style="max-width: 18rem;">
                     <div class="card-header">${temp_date}</div>
                     <div class="card-body">
-                    <img src="http://openweathermap.org/img/wn/${current_weather}@2x.png" class="card-img-top" alt="...">
+                    <img src="https://openweathermap.org/img/wn/${current_weather}@2x.png" class="card-img-top" alt="...">
                         <h5 class="card-title">${getAverageValue(temp)}°F</h5>
                         <p>Wind Speed ${getAverageValue(wind)} MPH</p>
                         <p>Humidity ${getAverageValue(humidity)}%</p>
