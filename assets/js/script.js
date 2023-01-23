@@ -87,7 +87,7 @@ function addRecentSearch(cityName, forecast){
     if(localStorage.getItem(cityName) == null){
         localStorage.setItem(cityName, JSON.stringify(forecast))
         $("#recentSearches").append(
-            `<button class="btn btn-secondary" type="button" class='popularCityButton' onclick="getForecast('${cityName}')">${cityName}</button>`
+            `<button class="btn btn-secondary" type="button" onclick="getForecastByCityName('${cityName}')">${cityName}</button>`
         )
     }
     updatePage(cityName, forecast)
