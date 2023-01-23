@@ -19,7 +19,21 @@
         <p id="currentDay" class="lead"></p>
     </header>
     <div>
-       
+        <div class="row p-3">
+            <div class="col-md-3 col-5">
+                <div class="card bg-light py-2 px-2">
+                    <h3>Search for a City:</h3>
+                    <input class="form-control" id="citySearch" placeholder="San Diego">
+                    <div class="d-grid gap-2 mt-2">
+                        <button class="btn btn-primary" type="button" id="citySearchSubmit" disabled
+                            onclick="citySearchSubmitted()">Search</button>
+                    </div>
+                    <hr>
+                    <h5 class="text-muted mb-n5">Recent:</h5>
+                    <div class="d-grid gap-2" id="recentSearches"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
